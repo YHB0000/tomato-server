@@ -8,6 +8,8 @@ npm install
 
 ## Run server
 
+http://localhost:8888
+
 ```
 npm run start
 ```

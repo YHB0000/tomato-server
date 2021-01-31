@@ -1,5 +1,5 @@
 {
-  "name": "traffic_api_server",
+  "name": "tomato_server",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",

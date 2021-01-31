@@ -50,5 +50,5 @@ route.init(app, path.join(process.cwd(), '/routes/'))
 
 
 app.listen(8888, () => {
-  console.log('running successfully')
+  console.log('http://localhost:8888 running successfully')
 })

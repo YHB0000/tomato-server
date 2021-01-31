@@ -12,7 +12,7 @@ const randomDate = (startDate, endDate) => {
 
 router.get('/test', (req, res) => {
 
-  for (let i = 14; i < 30; i++) {
+  for (let i = 10; i < 30; i++) {
 
     (i => {
       setInterval(() => {

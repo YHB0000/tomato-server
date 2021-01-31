@@ -19,34 +19,10 @@ router.get('/todo/getLine', async (req, res) => {
   }
 
   for (let j = 0; j < 7; j++) {
-    let week
-    switch (j) {
-      case 0:
-        week = 'Mon'
-        break
-      case 1:
-        week = 'Tue'
-        break
-      case 2:
-        week = 'Wed'
-        break
-      case 3:
-        week = 'Thu'
-        break
-      case 4:
-        week = 'Fri'
-        break
-      case 5:
-        week = 'Sta'
-        break
-      case 6:
-        week = 'Sun'
-        break
-    }
     for (let z = 0; z < 8; z++) {
       weekData.push({
-        week: week,
-        hour: z * 3,
+        week: j,
+        hour: z,
         value: countList[z]
       })
     }

@@ -8,7 +8,7 @@ router.delete('/todo', (req, res) => {
   var createDate = moment('2021-02-01 02:00', 'YYYY-MM-DD HH:mm').unix()
   var endDate = moment('2021-02-02 23:00', 'YYYY-MM-DD HH:mm').unix()
   List
-    .findOneAndRemove(req.query.id)
+    .findByIdAndRemove(req.body._id)
     .catch(err => {
       res.status(500).json({
         success: false,

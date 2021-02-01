@@ -9,7 +9,7 @@ router.get('/todo/finish', (req, res) => {
   var endDate = moment('2021-02-02 23:00', 'YYYY-MM-DD HH:mm').unix()
   List
     .findByIdAndUpdate(req.query.id, {
-      isFinish: req.query.isFinish || req.query.isFinish === 'true' ? false : true
+      isFinish: req.query.isFinish === 'true' ? false : true
     })
     .catch(err => {
       res.status(500).json({

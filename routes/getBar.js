@@ -5,7 +5,9 @@ const moment = require('moment')
 var router = express.Router()
 
 router.get('/todo/getBar', async (req, res) => {
-  const Date = '2021-01-11'
+  // const Date = '2021-01-11';
+  let Date = req.query.day;
+  // const Date = req.query.day
   var createDate = moment(Date + ' 00:00', 'YYYY-MM-DD HH:mm').unix()
   var endDate = moment(Date + ' 02:00', 'YYYY-MM-DD HH:mm').unix()
   var doneList = new Array
@@ -32,6 +34,7 @@ router.get('/todo/getBar', async (req, res) => {
         }]
       })
   }
+  console.log(doneList)
 
   for (let z = 0; z < 2; z++) {
     for (let j = 0; j < 12; j++) {
@@ -51,6 +54,7 @@ router.get('/todo/getBar', async (req, res) => {
         message: 'success',
         data: dayData
       })
+      console.log('todo/getBar success')
     })
     .catch(err => {
       res.status(500).json({

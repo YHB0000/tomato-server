@@ -1,15 +1,17 @@
 var express = require('express')
 var List = require('../models/TODO/list')
+var moment = require('moment')
 
 var router = express.Router()
 
-router.put('/todo', (req, res) => {
+router.get('/todo', (req, res) => {
+  const create = moment().unix()
   List
     .create({
-      name: req.body.name,
-      createDate: req.body.createDate,
+      name: req.query.name,
+      createDate: create,
       isFinish: false,
-      priority: req.body.priority
+      priority: 1
     })
     .then(ret => {
       res.status(200).json(ret)

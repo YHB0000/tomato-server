@@ -12,7 +12,7 @@ router.get('/todo/getCalendar', async (req, res) => {
   for (let i = 0; i < datelist.length; i++) {
     const temp = moment.unix(datelist[i].endDate).format('YYYY-MM-DD')
     if (temp != 'Invalid date') {
-      datalist.push(temp)
+      datalist.push({endDate: temp})
     }
   }
 
@@ -25,6 +25,7 @@ router.get('/todo/getCalendar', async (req, res) => {
         data: datalist
       }
       res.status(200).json(data)
+      console.log('todo/getCalendar success')
     })
     .catch(err => {
       res.status(500).json({

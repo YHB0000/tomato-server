@@ -12,7 +12,7 @@ const randomDate = (startDate, endDate) => {
 
 router.get('/test', (req, res) => {
 
-  for (let i = 10; i < 30; i++) {
+  for (let i = 1; i < 30; i++) {
 
     (i => {
       setInterval(() => {
@@ -26,14 +26,15 @@ router.get('/test', (req, res) => {
           .create({
             name: Random({ length: 6, letters: true }),
             createDate: moment(randomDate(startDate, endDate)).format('X'),
-            // endDate: moment(randomDate(startDate, endDate)).format('X'),
-            isFinish: false,
+            endDate: moment(randomDate(startDate, endDate)).format('X'),
+            isFinish: true,
             priority: Random({ length: 1, number: true })
           })
           .catch(err => {
             // console.log(err)
           })
-      }, 800);
+
+      }, 500);
     })(i)
   }
 
